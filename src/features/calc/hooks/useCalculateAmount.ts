@@ -23,7 +23,7 @@ export const useCalculateAmount = () => {
 
     const usdPrice = Math.floor(taxIncludedPrice * usdRate * 100) / 100;
     const eurPrice = Math.floor(taxIncludedPrice * eurRate * 100) / 100;
-
+    
     setPriceGrid([
       ...priceGrid,
       { product, tax, price, taxIncludedPrice, usdPrice, eurPrice },

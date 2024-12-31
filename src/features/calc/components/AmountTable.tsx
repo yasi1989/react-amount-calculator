@@ -45,10 +45,10 @@ const AmountTable = ({ priceGrid }: AmountTableProps) => {
               {priceGrid.reduce((a, c) => a + c.taxIncludedPrice, 0)}
             </td>
             <td className="border-t-2 border-gray-200 px-4 py-3 text-right">
-              {priceGrid.reduce((a, c) => a + c.usdPrice, 0)}
+              {priceGrid.reduce((a, c) => a + c.usdPrice, 0).toFixed(2)}
             </td>
             <td className="border-t-2 border-gray-200 px-4 py-3 text-right">
-              {priceGrid.reduce((a, c) => a + c.eurPrice, 0)}
+              {priceGrid.reduce((a, c) => a + c.eurPrice, 0).toFixed(2)}
             </td>
           </tr>
         </tbody>

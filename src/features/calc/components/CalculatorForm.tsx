@@ -11,13 +11,20 @@ const CalculatorForm = ({ onSubmit }: CalculatorFormProps) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
   });
+
+  const onSubmitAndReset = async (data: FormSchema) => {
+    await onSubmit(data);
+    reset();
+  }
+
   return (
     <section className="bg-white py-8 px-40 rounded-lg w-2/3">
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmitAndReset)}
         className="flex flex-col gap-4"
         noValidate
       >
